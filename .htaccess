@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Mencegah pengalihan untuk file yang ada di folder public
+    RewriteRule ^public/ - [L]
+
+    # Cek apakah file yang diminta ada di dalam folder public
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -f
+    RewriteRule (.+) public/$1 [L]
+
+    # Jika file tidak ditemukan, arahkan semua permintaan ke index.php di folder public
+    RewriteRule ^(.*)$ public/index.php?page=$1 [L,QSA]
+</IfModule>
