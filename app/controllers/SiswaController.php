@@ -9,11 +9,9 @@ class SiswaController extends Controller {
     public function index() {
      $this->view('siswa/home');
     }
-    public function edit($id) {
-        return  "Ini adalah method edit() di dalam class SiswaController dengan parameter $id";
-    }
 
     public function tambah() {
         $this->view('siswa/tambah');
     }
+
 }

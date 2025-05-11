@@ -9,4 +9,8 @@ class PembayaranController extends Controller{
     public function index() {
         $this->view('pembayaran/home');
     }
+
+    public function tambah() {
+        $this->view('pembayaran/tambah');
+    }
 }

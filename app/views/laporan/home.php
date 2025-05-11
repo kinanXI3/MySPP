@@ -32,7 +32,7 @@
     <table class="table table-bordered" id="laporanTable">
       <thead class="table-success">
         <tr>
-          <th>No</th>
+          <th>ID</th>
           <th>Nama Siswa</th>
           <th>NISN</th>
           <th>Kelas</th>

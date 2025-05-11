@@ -1,26 +1,18 @@
-<?php include "../app/views/templates/header.php"; ?>
+<?php include "../app/views/templates/header.php"; $no = 1; ?>
 
  <!-- Main Content -->
  <div class="container mt-2">
-    <h3 class="fw-bold mb-4">Data Kelas</h3>
+    <h3 class="fw-bold mb-4">Data SPP</h3>
+    <?php if (isset($_SESSION['success'])) : ?>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $_SESSION['success']; ?>
+        <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <?php unset($_SESSION['success']); ?>
+      <?php endif; ?>
 
-    <!-- Form Tambah Kelas -->
-    <div class="mb-4">
-      <form action="<?= urlTo('kelas/simpan') ?>" method="POST" class="border rounded p-4">
-        <div class="mb-3">
-          <label for="no" class="form-label">No</label>
-          <input type="number" class="form-control" id="no" name="no" required>
-        </div>
-        <div class="mb-3">
-          <label for="nama_kelas" class="form-label">Nama Kelas</label>
-          <input type="text" class="form-control" id="nama_kelas" name="nama_kelas" required>
-        </div>
-        <div class="mb-3">
-          <label for="kompetensi_keahlian" class="form-label">Kompetensi Keahlian</label>
-          <input type="text" class="form-control" id="kompetensi_keahlian" name="kompetensi_keahlian" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Simpan</button>
-      </form>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+    <a href="<?= urlTo('kelas/tambah') ?>" class="btn btn-primary">Tambah Data</a>
     </div>
 
     <!-- Tabel Data Kelas -->
@@ -34,7 +26,19 @@
         </tr>
       </thead>
       <tbody>
+        <?php foreach ($data as $kelas) : ?>
+          <tr>
+            <td><?= $no++; ?></td>
+            <td><?= $kelas['nama_kelas']; ?></td>
+            <td><?= $kelas['kompetensi_keahlian']; ?></td>
+            <td>
+            <a href="<?= urlTo('kelas/edit/' . $kelas['id_kelas']) ?>" class="btn btn-warning">Edit</a>
+            <a href="<?= urlTo('kelas/delete/' . $kelas['id_kelas']) ?>" class="btn btn-danger">Hapus</a>
+            </td>
+          </tr>
+          <?php endforeach; ?>
       </tbody>
     </table>
   </div>
 <?php include "../app/views/templates/footer.php"; ?>
+

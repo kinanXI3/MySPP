@@ -15,7 +15,7 @@
     <table class="table table-bordered table-hover">
       <thead class="table-success">
         <tr>
-          <th>No</th>
+          <th>ID</th>
           <th>NIS</th>
           <th>Nama Siswa</th>
           <th>Tanggal Bayar</th>

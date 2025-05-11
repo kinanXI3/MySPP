@@ -9,4 +9,8 @@ class PetugasController extends Controller{
     public function index(){
         $this->view('petugas/home');
     }
+
+    public function tambah(){
+        $this->view('petugas/tambah');
+    }
 }

@@ -23,20 +23,13 @@ class Url {
     }
 
     public function getMethod(){
-        $method = $this->getUrl();
-
-        if (count($method) === 3){
-            $method = $method[2];
-        } elseif (count($method) === 2){
-            $method = $method[1];
-        } else {
-            $method = 'index';
-        }
-        return $method;
+    $url = $this->getUrl();
+    return isset($url[1]) ? $url[1] : 'index';
     }
 
     public function getParameter(){
-        $parameter = $this->getUrl();
-        return count($parameter) === 3 ? $parameter[1] : null;
+        $url = $this->getUrl();
+        return isset($url[2]) ? $url[2] : null;
     }
-}  
+
+}
