@@ -32,8 +32,8 @@
             <td><?= $spp['tahun']; ?></td>
             <td><?= $spp['nominal']; ?></td>
             <td>
-            <a href="<?= urlTo('spp/edit/' . $spp['id_spp']) ?>" class="btn btn-warning">Edit</a>
-            <a href="<?= urlTo('spp/delete/' . $spp['id_spp']) ?>" class="btn btn-danger">Hapus</a>
+            <a href="<?= urlTo('spp/edit/' . $spp['id_spp']) ?>" class="btn btn-warning btn-sm">Edit</a>
+            <a href="<?= urlTo('spp/delete/' . $spp['id_spp']) ?>" class="btn btn-danger btn-sm">Hapus</a>
             </td>
           </tr>
           <?php endforeach; ?>

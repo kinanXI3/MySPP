@@ -32,8 +32,8 @@
             <td><?= $kelas['nama_kelas']; ?></td>
             <td><?= $kelas['kompetensi_keahlian']; ?></td>
             <td>
-            <a href="<?= urlTo('kelas/edit/' . $kelas['id_kelas']) ?>" class="btn btn-warning">Edit</a>
-            <a href="<?= urlTo('kelas/delete/' . $kelas['id_kelas']) ?>" class="btn btn-danger">Hapus</a>
+            <a href="<?= urlTo('kelas/edit/' . $kelas['id_kelas']) ?>" class="btn btn-warning btn-sm">Edit</a>
+            <a href="<?= urlTo('kelas/delete/' . $kelas['id_kelas']) ?>" class="btn btn-danger btn-sm">Hapus</a>
             </td>
           </tr>
           <?php endforeach; ?>
